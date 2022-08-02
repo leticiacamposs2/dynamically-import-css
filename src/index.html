@@ -9,6 +9,20 @@
     <script nomodule src="/build/prj-dynamic-css.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <my-component></my-component>
+
+    <select id="themeToggler" onchange="updateTheme()">
+      <option value="green" selected="selected">green</option>
+      <option value="red">red</option>
+    </select>
+
+    <script type="text/javascript">
+      function updateTheme() {
+        const toggler = document.getElementById('themeToggler');
+        const elem = document.querySelector('my-component');
+
+        elem.theme = toggler.value;
+      }
+    </script>
   </body>
 </html>
